@@ -1,25 +1,105 @@
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Lato&family=Montserrat&family=Open+Sans&display=swap');
-</style>
 
-* {
+
+*{
     margin: 0;
     padding: 0;
 }
 
-/* Elementos com o ID "titulo" */
-#titulo {
-    font-family:Tahoma;
-    color:gray;
-    
-} 
+header{
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
 
-/* Elementos com o ID "subtitulo" */
-#subtitulo {
-    font-family: sans-serif;
-    color: grey;
-    margin-right: 10px;
-} 
+}
+
+.imgw{
+    width: 100%;
+    height: 100%;
+    background-color: indigo;
+
+}
+
+.imgw img{
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    opacity: 5;
+    animation: zoom 20s;
+}
+@keyframes zoom{
+    0%{
+        transform:scale(1.4);
+    }
+    100%{
+        transform:scale(1);
+    }
+}
+
+
+.banner{
+    position: absolute;
+    top:9%;
+    right: 35%;
+}
+
+.banner h1 {
+    /* FONT-WEIGHT: 800; */
+    color: blanchedalmond;
+    font-size: 3rem; /* 1 rem = 16px*/
+    font-family: Tahoma;
+    font-weight:600;
+    text-shadow: 0.2rem 0.2rem 0.9rem;
+    margin-bottom: 01.5rem;
+    opacity: 0;
+    animation: moveIntro 2s 0.3s forwards;
+
+}
+
+.banner p{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: blanchedalmond;
+    font-size: 1.5em;
+    opacity: 0;
+    animation: moveIntro 2s 0.5s forwards;
+
+}
+
+.banner button{
+    font-family: Tahoma;
+    background: #f12711;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #f5af19, #f12711);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #f5af19, #f12711); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    padding: 1rem 2rem ;
+    font-size: medium;
+    border-radius: 5px;
+    border:none;
+    color:blanchedalmond;
+    letter-spacing: .1rem;
+    cursor:pointer;
+    text-transform:uppercase;
+    opacity: 0;
+    animation: moveIntro 2s 0.9s forwards;
+
+}
+
+.banner button:hover{
+    opacity: 0.8;
+}
+
+@keyframes moveIntro {
+    0%{
+        transform: translateX(10rem) rotateY(-10deg);
+   
+    }
+    100%{
+        transform: translateX(0rem) rotateY(0deg);
+        opacity: 1;
+    }
+    
+}
+
+
 
 #check{
     display: inline-block;
@@ -32,99 +112,12 @@ fieldset {
     border: 0;
 }
 
-/* Elemento de tag <body> */
+
 
 body{
-    background-color: #F0F8FF;
+    
     font-family:Segoe UI;
     font-size: 1em;
-    color:grey;
-    margin-left: 36%;
-    margin-top: 2%;
+    
     justify-content: center;
 }
-
-/* Elementos de tags <body>, <input>, <Select>, <textarea> e <button> */
-input, select, textarea, button {
-    font-family: sans-serif;
-    font-size: 1em;
-    color: grey;
-    border-radius: 5px;
-    
-}
-
-/* Elementos de classe "grupo" nos estados das pseudoclasses "before" e "after" */
-.grupo:before, .grupo:after {
-    display: table;
-}
-
-/* Elementos de classe "grupo" no estado da pseudoclasse "after" */
-.grupo:after {
-    clear: both;
-}
-
-/* Elementos de classe "campo" */
-.campo {
-    margin-bottom: 2em;
-    
-}
-
-/* Elementos de classe "campo" de tag <label> */
-.campo label {
-    margin-bottom: 0.2em;
-    color: grey;
-    display: block;
-}
-
-/* Elementos de classe "campo" ou "grupo" de tag <fieldset> */
-fieldset.grupo .campo {
-    float:  left;
-    margin-right: 8em;
-}
-
-/* Elementos de classe "campo" das tags <input> com atributo text e email, da tag <select> e da tag <textarea>*/
-.campo input[type="text"], .campo input[type="obs"], .campo select, .campo textarea {
-    padding: 0.7em;
-    width: 100px;
-    border: 1px solid burlywood;
-    box-shadow: 2px 2px 2px rgba(0,0,0,0.2);
-    display: block;
-}
-
-/* Elementos de classe "campo" de tag <select> e <option>*/
-.campo select option {
-    padding-right: 1em;
-}
-
-/* Elemento de classe "campo" com tag <input>, <select> e <textarea> tocas com estado da pseudoclasse "focus"*/
-.campo input:focus, .campo select:focus, .campo textarea:focus {
-    background:blueviolet;
-}
-
-/* Elemento de classe "botao" */
-.botao {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 1.2em;
-    background:blanchedalmond ;
-    border: 0;
-    margin-bottom: 1em;
-    position:fixed;
-    padding: 0.3em 0.6em;
-    box-shadow: 2px 2px 2px rgba(0,0,0,0.2);
-    text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
-    left: 80%;
-    margin-right: -50%;
-    transform: translate(-50%, -50%)
-}
-
-/* Elemento de classe "botao" com o estado da pseudoclasse "hover" */
-.botao:hover {
-    background:burlywood;
-    box-shadow: inset 2px 2px 2px rgba(0,0,0,0.2);
-    text-shadow: after;
-}
-
-/* Elementos de classe botão e de tag <select> */
-.botao, select{
-    cursor: pointer;
-} 

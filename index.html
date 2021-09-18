@@ -9,17 +9,31 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" type="text/css" href="./css/style.css" media="screen">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
     <script src="js/main.js"></script>
 
     <title>ENVIOS</title>
 </head>
 
 <body>
- 
-    <div>
-        <h1 id="titulo">SOLICITAÇÃO PLACA TOKEN</h1>
-        <p id="subtitulo">Envio material pendencias</p>
-        <br>
+    <div class="container">
+
+        <header>
+                <div class="imgw">
+
+                    <img src="img/bg.jpg" alt= "">
+                </div>
+                <div class="banner">
+                    <h1>SOLICITAÇÃO PLACA TOKEN</h1>
+                    <p >Envio material pendencias</p>
+                    <button onclick="solicitar()" >Solicitar</button>
+                </div>
+
+                
+        </header>
     </div>
 
     <div id="solicitacao">
@@ -62,13 +76,14 @@
             <textarea rows="3" style="width: 24em" id="obs" name="obs"></textarea>
         </div>
 
-        <button onclick="solicitar()" class="botao">SOLICITAR</button>
+       
 
        
         </div>
         
     </form>
 </div>
+
 
 
 
