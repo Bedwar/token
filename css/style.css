@@ -5,6 +5,10 @@
     padding: 0;
 }
 
+:root{
+
+    --font-primary: Tahoma;
+}
 header{
     width: 100%;
     height: 100vh;
@@ -39,18 +43,18 @@ header{
 
 .banner{
     position: absolute;
-    top:9%;
-    right: 35%;
+    top:6%;
+    right: 30%;
 }
 
 .banner h1 {
     /* FONT-WEIGHT: 800; */
     color: blanchedalmond;
     font-size: 3rem; /* 1 rem = 16px*/
-    font-family: Tahoma;
+    font-family: var(--font-primary);
     font-weight:600;
     text-shadow: 0.2rem 0.2rem 0.9rem;
-    margin-bottom: 01.5rem;
+    margin-bottom: 1.5rem;
     opacity: 0;
     animation: moveIntro 2s 0.3s forwards;
 
@@ -65,8 +69,8 @@ header{
 
 }
 
-.banner button{
-    font-family: Tahoma;
+.solicitacao button{
+    font-family: var(--font-primary);
     background: #f12711;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #f5af19, #f12711);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #f5af19, #f12711); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
@@ -78,18 +82,31 @@ header{
     letter-spacing: .1rem;
     cursor:pointer;
     text-transform:uppercase;
-    opacity: 0;
-    animation: moveIntro 2s 0.9s forwards;
-
+    animation: moveButton 4s 0.5 forwards;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+    margin-left: 35rem;
 }
 
 .banner button:hover{
-    opacity: 0.8;
+    opacity: 0.85;
+    color: black;
+    transition:color 1s;
+}
+
+@keyframes moveButton {
+    0%{
+        transform: translateY(10rem) rotateY(-10deg);
+    }
+    100%{
+        transform: translateY(0rem) rotateY(0deg);
+    }
+    
 }
 
 @keyframes moveIntro {
     0%{
-        transform: translateX(10rem) rotateY(-10deg);
+        transform: translateX(20rem) rotateY(-10deg);
    
     }
     100%{
@@ -98,26 +115,54 @@ header{
     }
     
 }
-
-
-
-#check{
-    display: inline-block;
+.solicitacao form{
+    display: flex;
+    flex-direction: column;
+    margin-left: 10rem;
+    margin-top: 2rem;
+    padding: 2rem;
+    
 }
 
-
-
-/* Elementos de tag <fieldset>*/
-fieldset {
-    border: 0;
+.solicitacao{
+  
+    background-color: rgba(10,23,55,0.5);
+    margin-top: 2rem;
+    margin-right: 3rem;
+    border-radius: 8px;
 }
 
-
-
-body{
+.input-group{
+    margin-top: 10px;
+    position: relative;
+}
+.field{
+    margin-top: 10px;
+    margin:2pxs ;
+    border:none;
+    width: 15rem;
+    height: 3rem;
+    background:bisque;
+    font-size: 1.2rem;
+    font-family: var(--font-primary);
+    border-radius: 5px;
+    border: 1px ;
+    animation:moveIntro 2s 0.3 forwards;
+    opacity: 0;
     
-    font-family:Segoe UI;
-    font-size: 1em;
-    
-    justify-content: center;
+}
+
+.field-label{
+   
+    font-family: var(--font-primary);
+    text-transform: uppercase;
+   font-size:1.6rem;
+   font-weight: bold;
+   color:antiquewhite;
+   margin-left: -350px;
+   
+}
+
+.field:focus ~label{
+    text-shadow: 0.2rem 0.5rem 2rem;
 }

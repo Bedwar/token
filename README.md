@@ -2,6 +2,6 @@
 material enviado a posto 
 
 ##
-:blossom: estilização
-:beetle: bug
-:rain: funcionalidade
+- :blossom: estilização
+- :beetle: bug
+- :rain: funcionalidade

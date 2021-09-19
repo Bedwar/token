@@ -10,83 +10,76 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" type="text/css" href="./css/style.css" media="screen">
     <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
-<link rel="manifest" href="/site.webmanifest">
-    <script src="js/main.js"></script>
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <script src="js/script.js"></script>
 
     <title>ENVIOS</title>
 </head>
 
 <body>
-    <div class="container">
 
-        <header>
-                <div class="imgw">
 
-                    <img src="img/bg.jpg" alt= "">
-                </div>
-                <div class="banner">
-                    <h1>SOLICITAÇÃO PLACA TOKEN</h1>
-                    <p >Envio material pendencias</p>
-                    <button onclick="solicitar()" >Solicitar</button>
-                </div>
+    <header>
+        <div class="imgw">
 
-                
-        </header>
-    </div>
-
-    <div id="solicitacao">
-    <form action ="arquivo.json" method="POST">
-
-        <fieldset class="grupo">
-            <div class="campo">
-                <label for="ibm" ><strong>IBM</strong></label>
-                <input type="text" name="ibm" id="ibm" placeholder="Ex:105687" required>
+            <img src="img/bg.jpg" alt="">
+        </div>
+        <div class="banner">
+            <h1>SOLICITAÇÃO PLACA TOKEN</h1>
+            <p>Envio material pendencias</p>
+            <div class="solicitacao">
+                <form action="scripst.json" method="POST">
+    
+                    <div class="input-group">
+                        <input type="text" class="field" id="ibm" placeholder="ex:104887">
+                        <label for="ibm" class="field-label">IBM</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" id="pc" class="field" placeholder="ex: 4">
+                        <label for="pc" class="field-label">placa comum</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" id="tc" class="field" placeholder="ex:1">
+                        <label for="tc" class="field-label">token comum</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" id="pd" class="field" placeholder="ex:6">
+                        <label for="pd" class="field-label">placa dual</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" id="td" class="field" placeholder="ex:1">
+                        <label for="td" class="field-label">token dual</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" id="ads" class="field" placeholder="ex: 4GC 2DC">
+                        <label for="ads" class="field-label">adesivos</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" id="acr" class="field" placeholder="ex:4">
+                        <label for="acr" class="field-label">acrilico</label>
+                    </div>
+    
+    
+    
+    
+    
+    
+                    <button type="submit" onclick="solicitar()">Solicitar</button>
+                </form>
+    
+    
             </div>
-        </fieldset>
-        <fieldset class="grupo">
-            <div class="campo">
-                <label for="pcomum"><strong>PLACA COMUM</strong></label>
-                <input type="text" name="pcomum" id="pcomum" placeholder="Ex:4">
-            </div>
-            <div class="campo">
-                <label for="pdual"><strong>PLACA DUAL</strong></label>
-                <input type="text" name="pdual" id="pdual" placeholder="Ex:6">
-            </div>
-        </fieldset>
-        <fieldset class="grupo">
-            <div class="campo">
-                <label for="tcomum"><strong>TOKEN COMUM</strong></label>
-                <input type="text" name="tcomum" id="tcomum" placeholder="Ex:1">
-            </div>
-            <div class="campo">
-                <label for="tdual"><strong>TOKEN DUAL</strong></label>
-                <input type="text" name="tdual" id="tdual" placeholder="Ex:1">
-            </div>
-        </fieldset>
-        <fieldset class="grupo">
-            <div class="campo">
-                <label for="adesivos"><strong>ADESIVOS</strong></label>
-                <input type="text" name="adesivos" id="adesivos" placeholder="Ex:4EC 5GC ">
-            </div>
-        </fieldset>
-        <div class="campo">
-            <label for="obs">OBS </label>
-            <textarea rows="3" style="width: 24em" id="obs" name="obs"></textarea>
         </div>
 
-       
-
-       
-        </div>
         
-    </form>
-</div>
 
 
 
+    </header>
 
 </body>
+<script src="js/script.js"></script>
 
 </html>
