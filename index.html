@@ -33,23 +33,23 @@
                 <form action="scripst.json" method="POST">
     
                     <div class="input-group">
-                        <input type="text" class="field" id="ibm" placeholder="ex:104887">
+                        <input type="number" class="field" id="ibm" placeholder="ex: 104887">
                         <label for="ibm" class="field-label">IBM</label>
                     </div>
                     <div class="input-group">
-                        <input type="text" id="pc" class="field" placeholder="ex: 4">
+                        <input type="number" id="pc" class="field" placeholder="ex: 4">
                         <label for="pc" class="field-label">placa comum</label>
                     </div>
                     <div class="input-group">
-                        <input type="text" id="tc" class="field" placeholder="ex:1">
+                        <input type="number" id="tc" class="field" placeholder="ex: 1">
                         <label for="tc" class="field-label">token comum</label>
                     </div>
                     <div class="input-group">
-                        <input type="text" id="pd" class="field" placeholder="ex:6">
+                        <input type="number" id="pd" class="field" placeholder="ex: 6">
                         <label for="pd" class="field-label">placa dual</label>
                     </div>
                     <div class="input-group">
-                        <input type="text" id="td" class="field" placeholder="ex:1">
+                        <input type="number" id="td" class="field" placeholder="ex: 1">
                         <label for="td" class="field-label">token dual</label>
                     </div>
                     <div class="input-group">
@@ -57,28 +57,57 @@
                         <label for="ads" class="field-label">adesivos</label>
                     </div>
                     <div class="input-group">
-                        <input type="text" id="acr" class="field" placeholder="ex:4">
+                        <input type="number" id="acr" class="field" placeholder="ex: 4">
                         <label for="acr" class="field-label">acrilico</label>
+                       
                     </div>
-    
-    
-    
-    
-    
-    
-                    <button type="submit" onclick="solicitar()">Solicitar</button>
+                    <label id="sol" for="pendencia" class="pendencia"></label>
+                
+                    <button id="btn" >Solicitar</button>
                 </form>
     
     
             </div>
+    
         </div>
 
-        
-
-
-
     </header>
+    <footer>
+        <div class="footer-content">
+            Copyright &copy; 2021, B  -
+            <div class="social-list">
+                <a href=""><i class="fab fa-facebook-f"></i></a>
+            </div>
+        </div>
+    </footer>
+    <script>
+        let pendencias = [];
+       
+        const addPend = (ev)=>{
+            ev.preventDefault();  //to stop the form submitting
+            let pend = {
+                    ibm: document.getElementById('ibm').value,
+                    pc: document.getElementById('pc').value,
+                    tc: document.getElementById('tc').value,
+                    pd: document.getElementById('pd').value,
+                    td: document.getElementById('td').value,
+                    ads: document.getElementById('ads').value,
+                    acr: document.getElementById('acr').value
+            }
+            pendencias.push(pend);
+            
+        
+            console.warn('envios' , {pendencias} );
+            let pre = document.querySelector('#msg pre');
+            pre.textContent =  JSON.stringify(pendencias);
 
+            //saving to localStorage
+            localStorage.setItem('MyPendList', JSON.stringify(pendencias));
+        }
+        document.addEventListener('DOMContentLoaded', ()=>{
+            document.getElementById('btn').addEventListener('click', addPend);
+        });
+    </script>  
 </body>
 <script src="js/script.js"></script>
 
